@@ -1,5 +1,8 @@
 #cloud-config
 
+ssh_authorized_keys:
+    - ssh-rsa ...
+
 coreos:
   etcd:
       # generate a new token for each unique cluster from https://discovery.etcd.io/new

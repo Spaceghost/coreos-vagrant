@@ -15,6 +15,8 @@ $enable_serial_logging = false
 $vb_gui = false
 $vb_memory = 1024
 $vb_cpus = 1
+$ssh_private_key_path = "~/.ssh/id_rsa"
+$ssh_forward_agent = true
 
 # Attempt to apply the deprecated environment variable NUM_INSTANCES to
 # $num_instances while allowing config.rb to override it
@@ -94,6 +96,8 @@ Vagrant.configure("2") do |config|
         config.vm.provision :shell, :inline => "mv /tmp/vagrantfile-user-data /var/lib/coreos-vagrant/", :privileged => true
       end
 
+      config.ssh.private_key_path = $ssh_private_key_path
+      config.ssh.forward_agent = $ssh_forward_agent
     end
   end
 end

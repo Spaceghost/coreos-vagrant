@@ -27,3 +27,9 @@
 #$vb_gui = false
 #$vb_memory = 1024
 #$vb_cpus = 1
+
+# Setting for path to ssh private key
+#$ssh_private_key_path = "~/.ssh/id_rsa"
+
+# Setting for whether to forward ssh agent
+#$ssh_forward_agent = true
