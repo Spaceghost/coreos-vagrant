@@ -22,9 +22,7 @@ if ENV["NUM_INSTANCES"].to_i > 0 && ENV["NUM_INSTANCES"]
   $num_instances = ENV["NUM_INSTANCES"].to_i
 end
 
-if File.exist?(CONFIG)
-  require CONFIG
-end
+require CONFIG if File.exist?(CONFIG)
 
 Vagrant.configure("2") do |config|
   config.vm.box = "coreos-%s" % $update_channel
