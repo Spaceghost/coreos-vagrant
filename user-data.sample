@@ -14,6 +14,9 @@ coreos:
   fleet:
       public-up: $public_ipv4
 
+  update:
+      reboot-strategy: best-effort
+
   units:
     - name: etcd.service
       command: start
